@@ -1,0 +1,6 @@
+{
+  "name": "My Bag Studio",
+  "description": "An interactive Warm Minimalist custom bag design studio. Experience the quiet luxury of crafting your own premium canvas and leather tote bags.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
