@@ -5,16 +5,16 @@ export const CANVAS_MATERIALS: CanvasMaterial[] = [
     id: "organic-sand",
     name: "有机暖沙",
     color: "#f5f1ea",
-    description: "源自日本冈山传承织机，可持续重织帆布。低张力纺织工艺，触感紧密而温润。",
-    origin: "日本仓敷",
+    description: "源自江苏南通的传承织机，可持续重织帆布。低张力纺织工艺，触感紧密而温润。",
+    origin: "江苏南通",
     imageUrl: "/images/material_canvas.jpg"
   },
   {
     id: "natural-sage",
     name: "秋鼠尾绿",
     color: "#a4b29a",
-    description: "灵感源自京都苔庭的有机染色帆布。选用有机长绒棉纱线纺织，天然石蜡处理赋予轻度防水性能。",
-    origin: "日本岐阜县",
+    description: "灵感源自江南园林的有机染色帆布。选用有机长绒棉纱线纺织，天然植物蜡处理赋予轻度防水性能。",
+    origin: "浙江绍兴",
     imageUrl: "/images/material_canvas.jpg"
   },
   {
@@ -22,15 +22,15 @@ export const CANVAS_MATERIALS: CanvasMaterial[] = [
     name: "墨曜黑",
     color: "#2e2e2b",
     description: "采用传统松烟墨自然染色。深邃哑光的黑色帆布，呈现出极为细腻的木炭风化纹理。",
-    origin: "日本奈良县",
+    origin: "安徽歙县",
     imageUrl: "/images/material_canvas.jpg"
   },
   {
     id: "desert-clay",
     name: "信乐陶土",
     color: "#b07a61",
-    description: "融入矿物黏土颜料的温暖陶土色帆布。灵感源自信乐烧的质朴器皿，呈现自然的橙褐色调。",
-    origin: "日本滋贺县",
+    description: "融入矿物黏土颜料的温暖陶土色帆布。灵感源自宜兴紫砂的质朴器皿，呈现自然的橙褐色调。",
+    origin: "江苏宜兴",
     imageUrl: "/images/material_canvas.jpg"
   }
 ];

@@ -190,7 +190,7 @@ export default function StudioPage() {
         setMessages(prev => [...prev, {
           id: (Date.now() + 1).toString(),
           sender: "assistant",
-          text: `${config.canvas.name}与${config.leather.name}的组合非常出色。我们采用的冈山帆布以低张力纺织工艺编织，经过多年日常使用会逐渐柔软贴合，呈现独一无二的个人质感。`,
+          text: `${config.canvas.name}与${config.leather.name}的组合非常出色。我们采用的南通帆布以低张力纺织工艺编织，经过多年日常使用会逐渐柔软贴合，呈现独一无二的个人质感。`,
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         }]);
       }, 1000);
@@ -513,7 +513,7 @@ export default function StudioPage() {
                 <div className="space-y-1">
                   <span className="text-[10px] uppercase tracking-widest font-bold text-[#c4956a]">第二步</span>
                   <h2 className="font-serif-sc font-bold text-xl text-[#2c2416]">选择帆布面料</h2>
-                  <p className="text-xs text-[#8b7d6b]">甄选日本冈山直供认证帆布，低张力纺织工艺</p>
+                  <p className="text-xs text-[#8b7d6b]">甄选江苏南通直供认证帆布，低张力纺织工艺</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
@@ -560,7 +560,7 @@ export default function StudioPage() {
                     src={config.canvas.imageUrl}
                   />
                   <div>
-                    <h5 className="text-xs font-bold uppercase tracking-wider text-[#2c2416]">冈山织机 · 帆布细节</h5>
+                    <h5 className="text-xs font-bold uppercase tracking-wider text-[#2c2416]">南通织机 · 帆布细节</h5>
                     <p className="text-xs text-[#8b7d6b] mt-1 leading-relaxed">{config.canvas.description}</p>
                   </div>
                 </div>
@@ -1040,7 +1040,7 @@ export default function StudioPage() {
             {/* Quick prompts */}
             <div className="p-2 border-t border-[#e8d5c4]/20 bg-white/80 overflow-x-auto flex gap-1.5 no-scrollbar">
               <button
-                onClick={() => sendChatMessage("冈山帆布有什么特别之处？")}
+                onClick={() => sendChatMessage("南通帆布有什么特别之处？")}
                 className="text-[10px] shrink-0 border border-[#e8d5c4]/40 bg-[#faf6f0] hover:bg-[#e8d5c4]/40 px-3 py-1 rounded-full text-[#8b7d6b] font-sans transition-all"
               >
                 帆布工艺

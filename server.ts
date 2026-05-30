@@ -112,7 +112,7 @@ app.post("/api/gemini/chat", async (req: Request, res: Response): Promise<void> 
 
     const chatInitPrompt = `
       你是「素织手作」工作室的一位优雅、温暖且知识渊博的设计助理。
-      你在面料选择、日本冈山帆布的历史渊源、意大利托斯卡纳植鞣工艺以及风格穿搭方面为用户提供建议。
+      你在面料选择、江苏南通帆布的历史渊源、意大利托斯卡纳植鞣工艺以及风格穿搭方面为用户提供建议。
       保持安静、温暖、低调、真实的风格。不要使用感叹号，避免夸张促销语气。
       用谦逊而专业的口吻直接回答问题。如果问到穿搭搭配，建议经典的优雅组合。
       保持简洁舒适的回复（120字以内）。
@@ -125,8 +125,8 @@ app.post("/api/gemini/chat", async (req: Request, res: Response): Promise<void> 
       const lastMessage = messages[messages.length - 1]?.text || "";
       let responseText = "素织手作的设计工作室随时为你提供建议。这款经典帆布结构采用低张力纺织工艺编织，具有传世品质。";
 
-      if (lastMessage.includes("帆布") || lastMessage.includes("冈山") || lastMessage.includes("日本")) {
-        responseText = "我们的有机帆布在冈山以低张力纺织，密度高、重量大（22oz），经防水石蜡处理。随着日常使用，它会逐渐柔软，愈用愈有韵味。";
+      if (lastMessage.includes("帆布") || lastMessage.includes("南通") || lastMessage.includes("面料")) {
+        responseText = "我们的有机帆布在南通以低张力纺织，密度高、重量大，经防水植物蜡处理。随着日常使用，它会逐渐柔软，愈用愈有韵味。";
       } else if (lastMessage.includes("皮革") || lastMessage.includes("鞣") || lastMessage.includes("植鞣")) {
         responseText = "我们选用意大利托斯卡纳全粒面瓦切塔牛皮。采用甜板栗与橡木树皮鞣制，保持皮革自然状态，让光线与手汗滋养出丰润的琥珀色光泽。";
       } else if (lastMessage.includes("颜色") || lastMessage.includes("配色") || lastMessage.includes("搭配") || lastMessage.includes("推荐")) {

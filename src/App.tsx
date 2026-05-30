@@ -3,15 +3,24 @@ import Navbar from "./components/Navbar";
 import LandingPage from "./components/LandingPage";
 import StudioPage from "./components/StudioPage";
 
+type View = "landing" | "studio";
+
 export default function App() {
-  const [currentView, setCurrentView] = useState<"landing" | "studio">("landing");
+  const [currentView, setCurrentView] = useState<View>("landing");
 
   const handleEnterStudio = () => {
     setCurrentView("studio");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleViewChange = (view: "landing" | "studio") => {
+  const handleEnterBrand = () => {
+    setCurrentView("landing");
+    setTimeout(() => {
+      document.getElementById("brand-story")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
+  const handleViewChange = (view: View) => {
     setCurrentView(view);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -25,11 +34,10 @@ export default function App() {
       />
 
       {/* Structured Multi-Screen Routing */}
-      {currentView === "landing" ? (
-        <LandingPage onEnterStudio={handleEnterStudio} />
-      ) : (
-        <StudioPage />
+      {currentView === "landing" && (
+        <LandingPage onEnterStudio={handleEnterStudio} onEnterBrand={handleEnterBrand} />
       )}
+      {currentView === "studio" && <StudioPage />}
     </div>
   );
 }

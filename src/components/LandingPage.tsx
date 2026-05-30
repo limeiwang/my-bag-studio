@@ -78,9 +78,10 @@ const fadeUp = {
 /* ── Component ── */
 interface LandingPageProps {
   onEnterStudio: () => void;
+  onEnterBrand: () => void;
 }
 
-export default function LandingPage({ onEnterStudio }: LandingPageProps) {
+export default function LandingPage({ onEnterStudio, onEnterBrand }: LandingPageProps) {
   const [openFaq, setOpenFaq] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [showShipping, setShowShipping] = useState(false);
@@ -269,12 +270,12 @@ export default function LandingPage({ onEnterStudio }: LandingPageProps) {
             </h2>
           </div>
           <p className="font-sans text-sm text-[#8b7d6b] max-w-sm">
-            我们甄选日本冈山有机帆布、意大利托斯卡纳植鞣革与无铅黄铜配件，每一份原料都承载着匠心地标的品质承诺。
+            我们甄选江苏南通有机帆布、意大利托斯卡纳植鞣革与无铅黄铜配件，每一份原料都承载着匠心地标的品质承诺。
           </p>
         </div>
         <div className="max-w-7xl mx-auto px-5 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: "有机帆布", sub: "Okayama Loom", origin: "日本冈山 · 仓敷", img: "/images/material_canvas.jpg", desc: "可持续重织帆布，低张力纺织工艺，拥有柔韧耐用的独特手感。" },
+            { title: "有机帆布", sub: "Okayama Loom", origin: "江苏南通 · 仓敷", img: "/images/material_canvas.jpg", desc: "可持续重织帆布，低张力纺织工艺，拥有柔韧耐用的独特手感。" },
             { title: "植鞣牛皮", sub: "Tuscany Vachetta", origin: "意大利 · 托斯卡纳", img: "/images/material_leather.jpg", desc: "全粒面植鞣革，采用板栗与橡木提取物慢鞣，随岁月呈现琥珀色光泽。" },
             { title: "拉丝黄铜", sub: "Brushed Brass", origin: "日本 · 大阪", img: "/images/material_hardware.jpg", desc: "纯砂铸黄铜五金件，手工拉丝缎面处理，抗氧化保护，手感温润厚重。" }
           ].map((mat, i) => (
@@ -526,7 +527,7 @@ export default function LandingPage({ onEnterStudio }: LandingPageProps) {
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="space-y-5">
               <p className="text-sm text-[#8b7d6b] leading-relaxed indent-8">
-                素织手作创立于北京，源起于对「慢工艺」的执念。在一个追求快速生产的时代，我们选择慢下来——从日本冈山的传承织机到意大利托斯卡纳的植鞣工坊，每一份原料都亲自探访、甄选。
+                素织手作创立于北京，源起于对「慢工艺」的执念。在一个追求快速生产的时代，我们选择慢下来——从江苏南通的传承织机到意大利托斯卡纳的植鞣工坊，每一份原料都亲自探访、甄选。
               </p>
               <p className="text-sm text-[#8b7d6b] leading-relaxed indent-8">
                 我们相信，一只好包不需要张扬的 Logo。它应该用质感说话——帆布的经纬密度、皮革的油脂光泽、黄铜的温润手感，这些细节才是真正的奢侈。每一只素织手作的包，都承载着工匠数百次的手工缝线与反复打磨。
@@ -587,7 +588,7 @@ export default function LandingPage({ onEnterStudio }: LandingPageProps) {
             </div>
             <div className="flex flex-col gap-2.5">
               <h4 className="font-sans font-bold text-xs text-[#e8d5c4] uppercase tracking-widest mb-1">关于</h4>
-              <button onClick={() => document.getElementById("brand-story")?.scrollIntoView({ behavior: "smooth" })} className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors text-left">品牌故事</button>
+              <button onClick={onEnterBrand} className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors text-left">品牌故事</button>
               <button onClick={() => setShowPrivacy(true)} className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors text-left">隐私政策</button>
               <button onClick={() => setShowTerms(true)} className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors text-left">服务条款</button>
             </div>
