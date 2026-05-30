@@ -83,6 +83,9 @@ interface LandingPageProps {
 export default function LandingPage({ onEnterStudio }: LandingPageProps) {
   const [openFaq, setOpenFaq] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [showShipping, setShowShipping] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
 
   // Gallery pinned horizontal scroll — GSAP ScrollTrigger
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -513,6 +516,42 @@ export default function LandingPage({ onEnterStudio }: LandingPageProps) {
         </div>
       </section>
 
+      {/* ════════════════ BRAND STORY ════════════════ */}
+      <section id="brand-story" className="py-24 bg-[#f5f0e8] border-y border-[#e8d5c4]/40">
+        <div className="max-w-7xl mx-auto px-5 md:px-16">
+          <div className="text-center mb-12">
+            <span className="font-sans font-bold text-xs uppercase tracking-widest text-[#c4956a]">品牌故事</span>
+            <h2 className="font-serif-sc font-bold text-3xl sm:text-4xl text-[#2c2416] mt-2">用心做一只好包</h2>
+          </div>
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="space-y-5">
+              <p className="text-sm text-[#8b7d6b] leading-relaxed indent-8">
+                素织手作创立于北京，源起于对「慢工艺」的执念。在一个追求快速生产的时代，我们选择慢下来——从日本冈山的传承织机到意大利托斯卡纳的植鞣工坊，每一份原料都亲自探访、甄选。
+              </p>
+              <p className="text-sm text-[#8b7d6b] leading-relaxed indent-8">
+                我们相信，一只好包不需要张扬的 Logo。它应该用质感说话——帆布的经纬密度、皮革的油脂光泽、黄铜的温润手感，这些细节才是真正的奢侈。每一只素织手作的包，都承载着工匠数百次的手工缝线与反复打磨。
+              </p>
+              <p className="text-sm text-[#8b7d6b] leading-relaxed indent-8">
+                更重要的是，我们希望你参与创作。从面料到印记，从颜色到配件——你做的每一个选择，都让这只包成为你的延伸。它不只是一只包，更是你对生活的态度。
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { num: "2019", label: "品牌创立" },
+                { num: "3000+", label: "定制客户" },
+                { num: "12", label: "全球面料合作伙伴" },
+                { num: "99%", label: "客户好评率" },
+              ].map((stat, i) => (
+                <div key={i} className="bg-[#faf6f0] rounded-2xl p-6 text-center border border-[#e8d5c4]/30">
+                  <div className="font-serif-sc font-bold text-3xl text-[#c4956a]">{stat.num}</div>
+                  <div className="text-xs text-[#8b7d6b] mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ════════════════ CTA ════════════════ */}
       <section className="py-24 text-center bg-[#2c2416] text-[#faf6f0] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
@@ -542,15 +581,15 @@ export default function LandingPage({ onEnterStudio }: LandingPageProps) {
             </div>
             <div className="flex flex-col gap-2.5">
               <h4 className="font-sans font-bold text-xs text-[#e8d5c4] uppercase tracking-widest mb-1">服务</h4>
-              <a href="#" className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors">定制流程</a>
-              <a href="#" className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors">面料指南</a>
-              <a href="#" className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors">配送说明</a>
+              <button onClick={() => document.getElementById("process")?.scrollIntoView({ behavior: "smooth" })} className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors text-left">定制流程</button>
+              <button onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })} className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors text-left">面料指南</button>
+              <button onClick={() => setShowShipping(true)} className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors text-left">配送说明</button>
             </div>
             <div className="flex flex-col gap-2.5">
               <h4 className="font-sans font-bold text-xs text-[#e8d5c4] uppercase tracking-widest mb-1">关于</h4>
-              <a href="#" className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors">品牌故事</a>
-              <a href="#" className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors">隐私政策</a>
-              <a href="#" className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors">服务条款</a>
+              <button onClick={() => document.getElementById("brand-story")?.scrollIntoView({ behavior: "smooth" })} className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors text-left">品牌故事</button>
+              <button onClick={() => setShowPrivacy(true)} className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors text-left">隐私政策</button>
+              <button onClick={() => setShowTerms(true)} className="text-sm text-[#e8d5c4]/60 hover:text-[#c4956a] transition-colors text-left">服务条款</button>
             </div>
             <div className="flex flex-col gap-2.5">
               <h4 className="font-sans font-bold text-xs text-[#e8d5c4] uppercase tracking-widest mb-1">联系</h4>
@@ -573,8 +612,11 @@ export default function LandingPage({ onEnterStudio }: LandingPageProps) {
         </div>
       </footer>
 
-      {/* ════════════════ CONTACT MODAL ════════════════ */}
+      {/* ════════════════ CONTACT & INFO MODALS ════════════════ */}
       {showModal && <ContactModal onClose={() => setShowModal(false)} />}
+      {showShipping && <ShippingModal onClose={() => setShowShipping(false)} />}
+      {showPrivacy && <PrivacyModal onClose={() => setShowPrivacy(false)} />}
+      {showTerms && <TermsModal onClose={() => setShowTerms(false)} />}
     </div>
   );
 }
@@ -726,6 +768,134 @@ function ContactModal({ onClose }: { onClose: () => void }) {
             </button>
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+/* ════════════════ Shipping Modal ════════════════ */
+function ShippingModal({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 bg-black/50 z-[200] flex items-center justify-center p-4"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 relative animate-[modalIn_0.3s_ease]">
+        <button onClick={onClose} className="absolute top-4 right-5 text-[#8b7d6b] hover:text-[#2c2416] transition-colors"><X className="w-5 h-5" /></button>
+        <h2 className="font-serif-sc font-bold text-1.5xl text-[#2c2416] mb-1">配送说明</h2>
+        <p className="text-sm text-[#8b7d6b] mb-6">关于定制包袋的配送时效与费用</p>
+
+        <div className="space-y-5 text-sm">
+          <div>
+            <h4 className="font-serif-sc font-semibold text-base text-[#2c2416] mb-2">配送时效</h4>
+            <div className="space-y-2">
+              <div className="flex justify-between py-2 border-b border-[#e8d5c4]/20">
+                <span className="text-[#8b7d6b]">基础款</span>
+                <span className="font-medium text-[#2c2416]">7-10 个工作日</span>
+              </div>
+              <div className="flex justify-between py-2 border-b border-[#e8d5c4]/20">
+                <span className="text-[#8b7d6b]">进阶款</span>
+                <span className="font-medium text-[#2c2416]">5-7 个工作日</span>
+              </div>
+              <div className="flex justify-between py-2 border-b border-[#e8d5c4]/20">
+                <span className="text-[#8b7d6b]">企业批量</span>
+                <span className="font-medium text-[#2c2416]">10-15 个工作日</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-serif-sc font-semibold text-base text-[#2c2416] mb-2">配送范围</h4>
+            <p className="text-[#8b7d6b] leading-relaxed">全国范围（含港澳台）均可配送。偏远地区（西藏、新疆部分地区）可能延长 2-3 天。</p>
+          </div>
+
+          <div>
+            <h4 className="font-serif-sc font-semibold text-base text-[#2c2416] mb-2">配送费用</h4>
+            <p className="text-[#8b7d6b] leading-relaxed">全国包邮。企业批量订单含税含运费，提供增值税发票。</p>
+          </div>
+
+          <div className="p-4 bg-[#f5f0e8] rounded-xl text-xs text-[#8b7d6b] leading-relaxed">
+            <strong className="text-[#2c2416]">温馨提示：</strong>所有定制包袋均为手工制作，下单后即进入制作流程，不接受加急订单。如有特殊时间需求，请在下单前联系客服确认。
+          </div>
+        </div>
+
+        <button onClick={onClose} className="w-full mt-8 py-3 rounded-full bg-[#2c2416] text-white font-medium text-sm hover:bg-[#c4956a] transition-all">知道了</button>
+      </div>
+    </div>
+  );
+}
+
+/* ════════════════ Privacy Modal ════════════════ */
+function PrivacyModal({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 bg-black/50 z-[200] flex items-center justify-center p-4"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 relative animate-[modalIn_0.3s_ease]">
+        <button onClick={onClose} className="absolute top-4 right-5 text-[#8b7d6b] hover:text-[#2c2416] transition-colors"><X className="w-5 h-5" /></button>
+        <h2 className="font-serif-sc font-bold text-1.5xl text-[#2c2416] mb-1">隐私政策</h2>
+        <p className="text-sm text-[#8b7d6b] mb-6">我们如何收集、使用和保护你的个人信息</p>
+
+        <div className="space-y-4 text-sm">
+          <div>
+            <h4 className="font-serif-sc font-semibold text-base text-[#2c2416] mb-1">信息收集</h4>
+            <p className="text-[#8b7d6b] leading-relaxed">我们在你提交定制咨询或下单时收集必要的信息，包括姓名、联系方式、收货地址等。这些信息仅用于处理你的定制需求与订单配送。</p>
+          </div>
+          <div>
+            <h4 className="font-serif-sc font-semibold text-base text-[#2c2416] mb-1">信息使用</h4>
+            <p className="text-[#8b7d6b] leading-relaxed">你的个人信息仅用于：处理定制咨询、完成订单交付、提供售后服务。我们不会将你的信息用于任何未经授权的商业用途。</p>
+          </div>
+          <div>
+            <h4 className="font-serif-sc font-semibold text-base text-[#2c2416] mb-1">信息保护</h4>
+            <p className="text-[#8b7d6b] leading-relaxed">我们采用业界标准的安全措施保护你的个人信息。所有数据传输使用 SSL 加密，本地存储的信息仅保存在你的浏览器中。</p>
+          </div>
+          <div>
+            <h4 className="font-serif-sc font-semibold text-base text-[#2c2416] mb-1">联系我们</h4>
+            <p className="text-[#8b7d6b] leading-relaxed">如对隐私政策有任何疑问，请通过微信 19322932086 或邮箱 19322932086@163.com 与我们联系。</p>
+          </div>
+          <p className="text-xs text-[#8b7d6b] mt-4">最后更新：2026 年 5 月</p>
+        </div>
+
+        <button onClick={onClose} className="w-full mt-8 py-3 rounded-full bg-[#2c2416] text-white font-medium text-sm hover:bg-[#c4956a] transition-all">知道了</button>
+      </div>
+    </div>
+  );
+}
+
+/* ════════════════ Terms Modal ════════════════ */
+function TermsModal({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 bg-black/50 z-[200] flex items-center justify-center p-4"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-8 relative animate-[modalIn_0.3s_ease]">
+        <button onClick={onClose} className="absolute top-4 right-5 text-[#8b7d6b] hover:text-[#2c2416] transition-colors"><X className="w-5 h-5" /></button>
+        <h2 className="font-serif-sc font-bold text-1.5xl text-[#2c2416] mb-1">服务条款</h2>
+        <p className="text-sm text-[#8b7d6b] mb-6">使用素织手作定制服务即表示同意以下条款</p>
+
+        <div className="space-y-4 text-sm">
+          <div>
+            <h4 className="font-serif-sc font-semibold text-base text-[#2c2416] mb-1">定制服务</h4>
+            <p className="text-[#8b7d6b] leading-relaxed">我们提供手工帆布包定制服务，包括但不限于面料选择、图案定制、尺寸调整、个性印记等。最终成品可能与设计图存在细微差异，这是手工制作的独特魅力所在。</p>
+          </div>
+          <div>
+            <h4 className="font-serif-sc font-semibold text-base text-[#2c2416] mb-1">退换政策</h4>
+            <p className="text-[#8b7d6b] leading-relaxed">我们承诺 7 天无理由退换。如果产品与确认后的设计稿不符或有质量问题，我们免费重做或全额退款。定制商品因手工特性，轻微色差、缝线偏差等不属于质量问题。</p>
+          </div>
+          <div>
+            <h4 className="font-serif-sc font-semibold text-base text-[#2c2416] mb-1">知识产权</h4>
+            <p className="text-[#8b7d6b] leading-relaxed">用户上传的设计图案，其知识产权归用户所有。素织手作有权在征得用户同意后，将完成的作品用于品牌展示与推广。</p>
+          </div>
+          <div>
+            <h4 className="font-serif-sc font-semibold text-base text-[#2c2416] mb-1">免责声明</h4>
+            <p className="text-[#8b7d6b] leading-relaxed">因不可抗力（如自然灾害、疫情等）导致的交付延迟，我们不承担相应责任。我们会尽最大努力减少影响并及时通知客户。</p>
+          </div>
+          <p className="text-xs text-[#8b7d6b] mt-4">最后更新：2026 年 5 月</p>
+        </div>
+
+        <button onClick={onClose} className="w-full mt-8 py-3 rounded-full bg-[#2c2416] text-white font-medium text-sm hover:bg-[#c4956a] transition-all">知道了</button>
       </div>
     </div>
   );
