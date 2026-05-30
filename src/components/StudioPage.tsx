@@ -1245,7 +1245,7 @@ export default function StudioPage() {
                         type="text"
                         value={checkoutForm.city}
                         onChange={(e) => setCheckoutForm({ ...checkoutForm, city: e.target.value })}
-                        placeholder="例如: 北京"
+                        placeholder="例如: 雄安"
                         className="w-full bg-transparent border-b border-[#e8d5c4] focus:border-[#2c2416] p-1.5 focus:outline-none text-xs text-[#2c2416] focus:ring-0 transition-all font-semibold"
                       />
                       {formErrors.city && <p className="text-[10px] text-red-600">{formErrors.city}</p>}

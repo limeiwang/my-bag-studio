@@ -527,7 +527,7 @@ export default function LandingPage({ onEnterStudio, onEnterBrand }: LandingPage
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="space-y-5">
               <p className="text-sm text-[#8b7d6b] leading-relaxed indent-8">
-                素织手作创立于北京，源起于对「慢工艺」的执念。在一个追求快速生产的时代，我们选择慢下来——从江苏南通的传承织机到意大利托斯卡纳的植鞣工坊，每一份原料都亲自探访、甄选。
+                素织手作创立于雄安，源起于对「慢工艺」的执念。在一个追求快速生产的时代，我们选择慢下来——从江苏南通的传承织机到意大利托斯卡纳的植鞣工坊，每一份原料都亲自探访、甄选。
               </p>
               <p className="text-sm text-[#8b7d6b] leading-relaxed indent-8">
                 我们相信，一只好包不需要张扬的 Logo。它应该用质感说话——帆布的经纬密度、皮革的油脂光泽、黄铜的温润手感，这些细节才是真正的奢侈。每一只素织手作的包，都承载着工匠数百次的手工缝线与反复打磨。
